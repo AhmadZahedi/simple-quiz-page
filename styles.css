@@ -13,25 +13,37 @@ body {
     color: #333;
     line-height: 1.5;
     height: 100vh;
-    background: linear-gradient(to top left, rgb(122, 23, 253), #80f7ff);
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    /*background: linear-gradient(to top left, rgb(122, 23, 253), #80f7ff);*/
     position: relative;
 }
 
 .title {
     font-size: 5rem;
+    color: aliceblue;
 }
 
 .button {
-    background-color: darkturquoise;
+    background-color: #1a2a4b;
     font-size: 3rem;
     letter-spacing: 2rem;
     font-weight: bold;
     color: aliceblue;
     border: none;
+    border-radius: 10px;
+    transition: 0.3s all;
 }
 
 .button:hover {
-    background-color: palegreen;
-    color: green;
-    box-shadow: inset 0px 0px 5px 1px green;
+    background-color: aliceblue;
+    color: #1a2a4b;
+}
+
+.question {
+    border-left: 1rem solid aliceblue;
+}
+
+.question__header {
+    font-size: 2rem;
+    color: darkseagreen;
 }
