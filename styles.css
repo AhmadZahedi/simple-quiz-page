@@ -25,7 +25,7 @@ body {
     color: aliceblue;
 }
 
-.button {
+.start-button {
     background-color: #1a2a4b;
     font-size: 3rem;
     letter-spacing: 2rem;
@@ -36,7 +36,25 @@ body {
     transition: 0.5s all;
 }
 
-.button:hover {
+.start-button:hover {
+    background-color: aliceblue;
+    color: #1a2a4b;
+}
+
+.category-button {
+    background-color: #1a2a4b;
+    font-size: 3rem;
+    /*letter-spacing: 2rem;*/
+    font-weight: bold;
+    color: aliceblue;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s all;
+    width: 30%;
+    height: fit-content;
+}
+
+.category-button:hover {
     background-color: aliceblue;
     color: #1a2a4b;
 }
@@ -68,13 +86,26 @@ body {
     cursor: pointer;
     transition: 0.3s all;
     border-radius: 1rem;
+    opacity: 100%;
+    user-select: none;
 }
 
 .question-cover:hover {
     color: #d53369;
-    user-select: none;
 }
 
-.opacity-0 {
+.question-cover__hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+    font-size: 20rem;
+    color: #1a2a4b;
+    cursor: pointer;
+    transition: 0.3s all;
+    border-radius: 1rem;
     opacity: 0;
+    user-select: none;
 }

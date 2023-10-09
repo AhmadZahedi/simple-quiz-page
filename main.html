@@ -10,16 +10,25 @@
 </head>
 <body class="container">
 <div class="h-100 d-flex flex-column justify-content-center align-items-center">
-    <h1 class="title text-center mb-5">Hello, modularity!</h1>
-    <button onclick="clickEvent()" class="button p-4 w-25">
+    <h1 class="title text-center mb-5">Occupational Therapy Quiz</h1>
+    <button onclick="clickEvent()" class="start-button p-4 w-25">
         START
     </button>
 </div>
 
-<div id="questions" class="questions-container h-100 row row-cols-3">
+<div id="categories" class="d-flex flex-wrap h-100 align-items-center justify-content-between">
+    <button class="category-button p-4">Occupational Therapy Fundamentals</button>
+    <button class="category-button p-4">Anatomy and Physiology</button>
+    <button class="category-button p-4">Assessment and Evaluation</button>
+    <button class="category-button p-4">Treatment Interventions</button>
+    <button class="category-button p-4">Pediatric Occupational Therapy</button>
+    <button class="category-button p-4">Occupational Therapy Ethics and Professionalism</button>
+</div>
+
+<div id="questions" class="h-100 row row-cols-3">
     <div class="question my-5 px-5">
         <div class="question__header h-25">
-            QUESTION 1 HEADER
+            Who is often considered the founder of occupational therapy?
         </div>
 
         <div class="question__body h-75">
@@ -28,7 +37,6 @@
 
         <div
                 class="question-cover d-flex align-items-center justify-content-center"
-                style="opacity: 100"
                 onclick="hideCover(this)"
         >1</div>
     </div>
@@ -44,7 +52,6 @@
 
         <div
                 class="question-cover d-flex align-items-center justify-content-center"
-                style="opacity: 100"
                 onclick="hideCover(this)"
         >2</div>
     </div>
@@ -60,7 +67,6 @@
 
         <div
                 class="question-cover d-flex align-items-center justify-content-center"
-                style="opacity: 100"
                 onclick="hideCover(this)"
         >3</div>
     </div>
@@ -76,7 +82,6 @@
 
         <div
                 class="question-cover d-flex align-items-center justify-content-center"
-                style="opacity: 100"
                 onclick="hideCover(this)"
         >4</div>
     </div>
@@ -92,7 +97,6 @@
 
         <div
                 class="question-cover d-flex align-items-center justify-content-center"
-                style="opacity: 100"
                 onclick="hideCover(this)"
         >5</div>
     </div>
@@ -108,7 +112,6 @@
 
         <div
                 class="question-cover d-flex align-items-center justify-content-center"
-                style="opacity: 100"
                 onclick="hideCover(this)"
         >6</div>
     </div>
@@ -116,19 +119,20 @@
 
 <script>
     function clickEvent() {
-        const questionSection = document.querySelector('#questions');
+        const questionSection = document.querySelector('#categories');
 
         questionSection.scrollIntoView({ behavior: 'smooth'});
 
     }
 
     function hideCover(coverElement) {
-        console.log(coverElement.style.opacity)
-        console.log(coverElement.style.opacity === '100')
-        if (coverElement.style.opacity === '100') {
-            coverElement.style.opacity = '0';
+        console.log(coverElement.classList)
+        if (coverElement.classList.contains('question-cover')) {
+            coverElement.classList.remove('question-cover');
+            coverElement.classList.add('question-cover__hidden');
         } else {
-            coverElement.style.opacity = '100';
+            coverElement.classList.remove('question-cover__hidden');
+            coverElement.classList.add('question-cover');
         }
     }
 </script>
