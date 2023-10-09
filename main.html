@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Helloooooo</title>
+    <title>Challenge</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="container">
@@ -16,7 +16,7 @@
     </button>
 </div>
 
-<div id="#questions" class="questions-container h-100 row row-cols-3">
+<div id="questions" class="questions-container h-100 row row-cols-3">
     <div class="question my-5 px-5">
         <div class="question__header h-25">
             QUESTION 1 HEADER
@@ -26,7 +26,11 @@
             QUESTION 1 BODY
         </div>
 
-        <div class="question-cover d-flex align-items-center justify-content-center">1</div>
+        <div
+                class="question-cover d-flex align-items-center justify-content-center"
+                style="opacity: 100"
+                onclick="hideCover(this)"
+        >1</div>
     </div>
 
     <div class="question my-5 px-5">
@@ -38,7 +42,11 @@
             QUESTION 1 BODY
         </div>
 
-        <div class="question-cover d-flex align-items-center justify-content-center">2</div>
+        <div
+                class="question-cover d-flex align-items-center justify-content-center"
+                style="opacity: 100"
+                onclick="hideCover(this)"
+        >2</div>
     </div>
 
     <div class="question my-5 px-5">
@@ -50,7 +58,11 @@
             QUESTION 1 BODY
         </div>
 
-        <div class="question-cover d-flex align-items-center justify-content-center">3</div>
+        <div
+                class="question-cover d-flex align-items-center justify-content-center"
+                style="opacity: 100"
+                onclick="hideCover(this)"
+        >3</div>
     </div>
 
     <div class="question my-5 px-5">
@@ -62,7 +74,11 @@
             QUESTION 1 BODY
         </div>
 
-        <div class="question-cover d-flex align-items-center justify-content-center">4</div>
+        <div
+                class="question-cover d-flex align-items-center justify-content-center"
+                style="opacity: 100"
+                onclick="hideCover(this)"
+        >4</div>
     </div>
 
     <div class="question my-5 px-5">
@@ -74,7 +90,11 @@
             QUESTION 1 BODY
         </div>
 
-        <div class="question-cover d-flex align-items-center justify-content-center">5</div>
+        <div
+                class="question-cover d-flex align-items-center justify-content-center"
+                style="opacity: 100"
+                onclick="hideCover(this)"
+        >5</div>
     </div>
 
     <div class="question my-5 px-5">
@@ -86,13 +106,31 @@
             QUESTION 1 BODY
         </div>
 
-        <div class="question-cover d-flex align-items-center justify-content-center">6</div>
+        <div
+                class="question-cover d-flex align-items-center justify-content-center"
+                style="opacity: 100"
+                onclick="hideCover(this)"
+        >6</div>
     </div>
 </div>
 
-<script type="module">
-    const btn = document.querySelector(".button");
+<script>
+    function clickEvent() {
+        const questionSection = document.querySelector('#questions');
 
+        questionSection.scrollIntoView({ behavior: 'smooth'});
+
+    }
+
+    function hideCover(coverElement) {
+        console.log(coverElement.style.opacity)
+        console.log(coverElement.style.opacity === '100')
+        if (coverElement.style.opacity === '100') {
+            coverElement.style.opacity = '0';
+        } else {
+            coverElement.style.opacity = '100';
+        }
+    }
 </script>
 </body>
 </html>
