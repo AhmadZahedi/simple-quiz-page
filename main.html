@@ -11,7 +11,7 @@
 <body class="container">
 <div class="h-100 d-flex flex-column justify-content-center align-items-center">
     <h1 class="title text-center mb-5">Occupational Therapy Quiz</h1>
-    <button onclick="handleStartBtnClick()" class="start-button p-4 w-25">
+    <button onclick="handleGoToCategories()" class="start-button p-4 w-25">
         START
     </button>
 </div>
@@ -60,9 +60,18 @@
     </button>
 </div>
 
-<div id="questions-1" class="h-100 d-flex flex-column justify-content-between">
-    <div class="questions__header">
-        category one
+<div id="category-1" class="h-100 d-flex flex-column justify-content-between">
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="questions__header--text">
+            category one
+        </div>
+
+        <button
+                class="back-to-categories-button d-flex justify-content-center align-items-center p-2"
+                onclick="handleGoToCategories()"
+        >
+            ⬆
+        </button>
     </div>
 
     <div class="row row-cols-3 flex-grow-1">
@@ -302,9 +311,18 @@
     </div>
 </div>
 
-<div id="questions-2" class="h-100 d-flex flex-column justify-content-between">
-    <div class="questions__header">
-        category two
+<div id="category-2" class="h-100 d-flex flex-column justify-content-between">
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="questions__header--text">
+            category two
+        </div>
+
+        <button
+                class="back-to-categories-button d-flex justify-content-center align-items-center p-2"
+                onclick="handleGoToCategories()"
+        >
+            ⬆
+        </button>
     </div>
 
     <div class="row row-cols-3 flex-grow-1">
@@ -544,9 +562,18 @@
     </div>
 </div>
 
-<div id="questions-3" class="h-100 d-flex flex-column justify-content-between">
-    <div class="questions__header">
-        category three
+<div id="category-3" class="h-100 d-flex flex-column justify-content-between">
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="questions__header--text">
+            category three
+        </div>
+
+        <button
+                class="back-to-categories-button d-flex justify-content-center align-items-center p-2"
+                onclick="handleGoToCategories()"
+        >
+            ⬆
+        </button>
     </div>
 
     <div class="row row-cols-3 flex-grow-1">
@@ -786,9 +813,18 @@
     </div>
 </div>
 
-<div id="questions-4" class="h-100 d-flex flex-column justify-content-between">
-    <div class="questions__header">
-        category four
+<div id="category-4" class="h-100 d-flex flex-column justify-content-between">
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="questions__header--text">
+            category four
+        </div>
+
+        <button
+                class="back-to-categories-button d-flex justify-content-center align-items-center p-2"
+                onclick="handleGoToCategories()"
+        >
+            ⬆
+        </button>
     </div>
 
     <div class="row row-cols-3 flex-grow-1">
@@ -1028,9 +1064,18 @@
     </div>
 </div>
 
-<div id="questions-5" class="h-100 d-flex flex-column justify-content-between">
-    <div class="questions__header">
-        category five
+<div id="category-5" class="h-100 d-flex flex-column justify-content-between">
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="questions__header--text">
+            category five
+        </div>
+
+        <button
+                class="back-to-categories-button d-flex justify-content-center align-items-center p-2"
+                onclick="handleGoToCategories()"
+        >
+            ⬆
+        </button>
     </div>
 
     <div class="row row-cols-3 flex-grow-1">
@@ -1270,9 +1315,18 @@
     </div>
 </div>
 
-<div id="questions-6" class="h-100 d-flex flex-column justify-content-between">
-    <div class="questions__header">
-        category six
+<div id="category-6" class="h-100 d-flex flex-column justify-content-between">
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="questions__header--text">
+            category six
+        </div>
+
+        <button
+                class="back-to-categories-button d-flex justify-content-center align-items-center p-2"
+                onclick="handleGoToCategories()"
+        >
+            ⬆
+        </button>
     </div>
 
     <div class="row row-cols-3 flex-grow-1">
@@ -1511,19 +1565,16 @@
         </div>
     </div>
 </div>
-
-
 <script>
-    function handleStartBtnClick() {
         const categoriesSection = document.querySelector('#categories');
-
+    function handleGoToCategories() {
         categoriesSection.scrollIntoView({ behavior: 'smooth' });
     }
 
     function handleCategoryBtnClick(sectionIndex) {
-        const targetQuestionsSection = document.querySelector(`#questions-${sectionIndex}`);
+        const targetCategorySection = document.querySelector(`#category-${sectionIndex}`);
 
-        targetQuestionsSection.scrollIntoView({ behavior: 'smooth' })
+        targetCategorySection.scrollIntoView({ behavior: 'smooth' })
     }
 
     function hideQuestionCover(coverElement) {

@@ -42,7 +42,6 @@ body {
 .category-button {
     background-color: #1a2a4b;
     font-size: 3rem;
-    /*letter-spacing: 2rem;*/
     font-weight: bold;
     color: aliceblue;
     border: none;
@@ -57,11 +56,28 @@ body {
     color: #1a2a4b;
 }
 
-.questions__header {
+.questions__header--text {
     font-size: 8rem;
     color: aliceblue;
     text-decoration: underline overline;
     text-transform: capitalize;
+}
+
+.back-to-categories-button {
+    background-color: #1a2a4b;
+    border: 1px solid aliceblue;
+    width: 8rem;
+    height: 8rem;
+    font-size: 7rem;
+    font-weight: bold;
+    color: aliceblue;
+    border-radius: 10px;
+    transition: 0.5s all;
+}
+
+.back-to-categories-button:hover {
+    background-color: aliceblue;
+    color: #1a2a4b;
 }
 
 .question__container {
