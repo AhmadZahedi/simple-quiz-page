@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="container">
-<div class="h-100 d-flex flex-column justify-content-center align-items-center">
+<div id="start-section" class="h-100 d-flex flex-column justify-content-center align-items-center">
     <h1 class="title text-center mb-5">Occupational Therapy Quiz</h1>
     <button onclick="goToCategories()" class="start-button p-4 w-25">
         START
@@ -1504,6 +1504,27 @@
         </div>
     </div>
 </div>
+
+<div
+        id="end-section"
+        class="finish-section d-flex justify-content-center align-items-center text-center"
+>
+    thanks for your participation
+</div>
+
+<button
+        class="static-actions--btn static-actions--btn__start"
+        onclick="goToStartSection()"
+>
+    begin
+</button>
+
+<button
+        class="static-actions--btn static-actions--btn__finish"
+        onclick="goToFinishSection()"
+>
+    end
+</button>
 <script>
     const categoriesSection = document.querySelector('#categories');
 
@@ -1514,7 +1535,7 @@
     function goToCategoryByIndex(sectionIndex) {
         const targetCategorySection = document.querySelector(`#category-${sectionIndex}`);
 
-        targetCategorySection.scrollIntoView({ behavior: 'smooth' })
+        targetCategorySection.scrollIntoView({ behavior: 'smooth' });
     }
 
     function toggleQuestionCover(coverElement) {
@@ -1537,6 +1558,18 @@
             coverElement.classList.remove('answer-cover__hidden');
             coverElement.classList.add('answer-cover');
         }
+    }
+
+    function goToFinishSection() {
+        const endSection = document.querySelector('#end-section');
+
+        endSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function goToStartSection() {
+        const startSection = document.querySelector('#start-section');
+
+        startSection.scrollIntoView({ behavior: 'smooth' });
     }
 </script>
 </body>
