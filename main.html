@@ -1585,6 +1585,8 @@
         } else {
             coverElement.classList.remove('question-cover__hidden');
             coverElement.classList.add('question-cover');
+            coverElement.parentElement.lastElementChild.classList.add('answer-cover');
+            coverElement.parentElement.lastElementChild.classList.remove('answer-cover__hidden');
         }
     }
 
