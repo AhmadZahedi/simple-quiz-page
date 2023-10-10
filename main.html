@@ -11,128 +11,1538 @@
 <body class="container">
 <div class="h-100 d-flex flex-column justify-content-center align-items-center">
     <h1 class="title text-center mb-5">Occupational Therapy Quiz</h1>
-    <button onclick="clickEvent()" class="start-button p-4 w-25">
+    <button onclick="handleStartBtnClick()" class="start-button p-4 w-25">
         START
     </button>
 </div>
 
 <div id="categories" class="d-flex flex-wrap h-100 align-items-center justify-content-between">
-    <button class="category-button p-4">Occupational Therapy Fundamentals</button>
-    <button class="category-button p-4">Anatomy and Physiology</button>
-    <button class="category-button p-4">Assessment and Evaluation</button>
-    <button class="category-button p-4">Treatment Interventions</button>
-    <button class="category-button p-4">Pediatric Occupational Therapy</button>
-    <button class="category-button p-4">Occupational Therapy Ethics and Professionalism</button>
+    <button
+            class="category-button p-4"
+            onclick="handleCategoryBtnClick(1)"
+    >
+        Occupational Therapy Fundamentals
+    </button>
+
+    <button
+            class="category-button p-4"
+            onclick="handleCategoryBtnClick(2)"
+    >
+        Anatomy and Physiology
+    </button>
+
+    <button
+            class="category-button p-4"
+            onclick="handleCategoryBtnClick(3)"
+    >
+        Assessment and Evaluation
+    </button>
+
+    <button
+            class="category-button p-4"
+            onclick="handleCategoryBtnClick(4)"
+    >
+        Treatment Interventions
+    </button>
+
+    <button
+            class="category-button p-4"
+            onclick="handleCategoryBtnClick(5)"
+    >
+        Pediatric Occupational Therapy
+    </button>
+
+    <button
+            class="category-button p-4"
+            onclick="handleCategoryBtnClick(6)"
+    >
+        Occupational Therapy Ethics and Professionalism
+    </button>
 </div>
 
-<div id="questions" class="h-100 row row-cols-3">
-    <div class="question my-5 px-5">
-        <div class="question__header h-25">
-            Who is often considered the founder of occupational therapy?
-        </div>
-
-        <div class="question__body h-75">
-            QUESTION 1 BODY
-        </div>
-
-        <div
-                class="question-cover d-flex align-items-center justify-content-center"
-                onclick="hideCover(this)"
-        >1</div>
+<div id="questions-1" class="h-100 d-flex flex-column justify-content-between">
+    <div class="questions__header">
+        category one
     </div>
 
-    <div class="question my-5 px-5">
-        <div class="question__header h-25">
-            QUESTION 1 HEADER
+    <div class="row row-cols-3 flex-grow-1">
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>100</span>
+                </div>
+                1
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
         </div>
 
-        <div class="question__body h-75">
-            QUESTION 1 BODY
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>300</span>
+                </div>
+                2
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
         </div>
 
-        <div
-                class="question-cover d-flex align-items-center justify-content-center"
-                onclick="hideCover(this)"
-        >2</div>
-    </div>
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
 
-    <div class="question my-5 px-5">
-        <div class="question__header h-25">
-            QUESTION 1 HEADER
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>200</span>
+                </div>
+                3
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
         </div>
 
-        <div class="question__body h-75">
-            QUESTION 1 BODY
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>200</span>
+                </div>
+                4
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
         </div>
 
-        <div
-                class="question-cover d-flex align-items-center justify-content-center"
-                onclick="hideCover(this)"
-        >3</div>
-    </div>
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
 
-    <div class="question my-5 px-5">
-        <div class="question__header h-25">
-            QUESTION 1 HEADER
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>500</span>
+                </div>
+                5
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
         </div>
 
-        <div class="question__body h-75">
-            QUESTION 1 BODY
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>400</span>
+                </div>
+                6
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
         </div>
-
-        <div
-                class="question-cover d-flex align-items-center justify-content-center"
-                onclick="hideCover(this)"
-        >4</div>
-    </div>
-
-    <div class="question my-5 px-5">
-        <div class="question__header h-25">
-            QUESTION 1 HEADER
-        </div>
-
-        <div class="question__body h-75">
-            QUESTION 1 BODY
-        </div>
-
-        <div
-                class="question-cover d-flex align-items-center justify-content-center"
-                onclick="hideCover(this)"
-        >5</div>
-    </div>
-
-    <div class="question my-5 px-5">
-        <div class="question__header h-25">
-            QUESTION 1 HEADER
-        </div>
-
-        <div class="question__body h-75">
-            QUESTION 1 BODY
-        </div>
-
-        <div
-                class="question-cover d-flex align-items-center justify-content-center"
-                onclick="hideCover(this)"
-        >6</div>
     </div>
 </div>
+
+<div id="questions-2" class="h-100 d-flex flex-column justify-content-between">
+    <div class="questions__header">
+        category two
+    </div>
+
+    <div class="row row-cols-3 flex-grow-1">
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>100</span>
+                </div>
+                1
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>300</span>
+                </div>
+                2
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>200</span>
+                </div>
+                3
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>200</span>
+                </div>
+                4
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>500</span>
+                </div>
+                5
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>400</span>
+                </div>
+                6
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="questions-3" class="h-100 d-flex flex-column justify-content-between">
+    <div class="questions__header">
+        category three
+    </div>
+
+    <div class="row row-cols-3 flex-grow-1">
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>100</span>
+                </div>
+                1
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>300</span>
+                </div>
+                2
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>200</span>
+                </div>
+                3
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>200</span>
+                </div>
+                4
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>500</span>
+                </div>
+                5
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>400</span>
+                </div>
+                6
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="questions-4" class="h-100 d-flex flex-column justify-content-between">
+    <div class="questions__header">
+        category four
+    </div>
+
+    <div class="row row-cols-3 flex-grow-1">
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>100</span>
+                </div>
+                1
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>300</span>
+                </div>
+                2
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>200</span>
+                </div>
+                3
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>200</span>
+                </div>
+                4
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>500</span>
+                </div>
+                5
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>400</span>
+                </div>
+                6
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="questions-5" class="h-100 d-flex flex-column justify-content-between">
+    <div class="questions__header">
+        category five
+    </div>
+
+    <div class="row row-cols-3 flex-grow-1">
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>100</span>
+                </div>
+                1
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>300</span>
+                </div>
+                2
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>200</span>
+                </div>
+                3
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>200</span>
+                </div>
+                4
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>500</span>
+                </div>
+                5
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>400</span>
+                </div>
+                6
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="questions-6" class="h-100 d-flex flex-column justify-content-between">
+    <div class="questions__header">
+        category six
+    </div>
+
+    <div class="row row-cols-3 flex-grow-1">
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>100</span>
+                </div>
+                1
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>300</span>
+                </div>
+                2
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>200</span>
+                </div>
+                3
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>200</span>
+                </div>
+                4
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>500</span>
+                </div>
+                5
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+
+        <div class="question__container d-flex flex-column my-2">
+            <div class="flex-80 pb-4">
+                <div class="question__header">
+                    Who is often considered the founder of occupational therapy?
+                </div>
+
+                <div class="question__body">
+                    <ul class="question--options fs-3">
+                        <li class="mt-4">Sigmund Freud</li>
+                        <li class="mt-4">Dr. William Rush Dunton Jr.</li>
+                        <li class="mt-4">John Dewey</li>
+                        <li class="mt-4">Florence Nightingale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-20 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
+                Option A
+            </div>
+
+            <div
+                    class="question-cover d-flex align-items-center justify-content-center rounded"
+                    onclick="hideQuestionCover(this)"
+            >
+                <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+                    <span>🎁</span>
+                    <span>400</span>
+                </div>
+                6
+            </div>
+
+            <div
+                    class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
+                    onclick="hideAnswerCover(this)"
+            >
+                ?
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script>
-    function clickEvent() {
-        const questionSection = document.querySelector('#categories');
+    function handleStartBtnClick() {
+        const categoriesSection = document.querySelector('#categories');
 
-        questionSection.scrollIntoView({ behavior: 'smooth'});
-
+        categoriesSection.scrollIntoView({ behavior: 'smooth' });
     }
 
-    function hideCover(coverElement) {
-        console.log(coverElement.classList)
+    function handleCategoryBtnClick(sectionIndex) {
+        const targetQuestionsSection = document.querySelector(`#questions-${sectionIndex}`);
+
+        targetQuestionsSection.scrollIntoView({ behavior: 'smooth' })
+    }
+
+    function hideQuestionCover(coverElement) {
         if (coverElement.classList.contains('question-cover')) {
             coverElement.classList.remove('question-cover');
             coverElement.classList.add('question-cover__hidden');
         } else {
             coverElement.classList.remove('question-cover__hidden');
             coverElement.classList.add('question-cover');
+        }
+    }
+
+    function hideAnswerCover(coverElement) {
+        if (coverElement.classList.contains('answer-cover')) {
+            coverElement.classList.remove('answer-cover');
+            coverElement.classList.add('answer-cover__hidden');
+        } else {
+            coverElement.classList.remove('answer-cover__hidden');
+            coverElement.classList.add('answer-cover');
         }
     }
 </script>
