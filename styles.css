@@ -17,6 +17,10 @@ body {
     position: relative;
 }
 
+a {
+    text-decoration: none;
+}
+
 .title {
     font-size: 5rem;
     color: aliceblue;
