@@ -48,7 +48,7 @@ body {
     border-radius: 10px;
     transition: 0.5s all;
     width: 30%;
-    height: fit-content;
+    height: 20%;
 }
 
 .category-button:hover {
