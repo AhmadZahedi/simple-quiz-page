@@ -11,7 +11,7 @@
 <body class="container">
 <div class="h-100 d-flex flex-column justify-content-center align-items-center">
     <h1 class="title text-center mb-5">Occupational Therapy Quiz</h1>
-    <button onclick="handleGoToCategories()" class="start-button p-4 w-25">
+    <button onclick="goToCategories()" class="start-button p-4 w-25">
         START
     </button>
 </div>
@@ -19,42 +19,42 @@
 <div id="categories" class="d-flex flex-wrap h-100 align-items-center justify-content-between">
     <button
             class="category-button p-4"
-            onclick="handleCategoryBtnClick(1)"
+            onclick="goToCategoryByIndex(1)"
     >
         Occupational Therapy Fundamentals
     </button>
 
     <button
             class="category-button p-4"
-            onclick="handleCategoryBtnClick(2)"
+            onclick="goToCategoryByIndex(2)"
     >
         Anatomy and Physiology
     </button>
 
     <button
             class="category-button p-4"
-            onclick="handleCategoryBtnClick(3)"
+            onclick="goToCategoryByIndex(3)"
     >
         Assessment and Evaluation
     </button>
 
     <button
             class="category-button p-4"
-            onclick="handleCategoryBtnClick(4)"
+            onclick="goToCategoryByIndex(4)"
     >
         Treatment Interventions
     </button>
 
     <button
             class="category-button p-4"
-            onclick="handleCategoryBtnClick(5)"
+            onclick="goToCategoryByIndex(5)"
     >
         Pediatric Occupational Therapy
     </button>
 
     <button
             class="category-button p-4"
-            onclick="handleCategoryBtnClick(6)"
+            onclick="goToCategoryByIndex(6)"
     >
         Occupational Therapy Ethics and Professionalism
     </button>
@@ -68,7 +68,7 @@
 
         <button
                 class="back-to-categories-button d-flex justify-content-center align-items-center p-2"
-                onclick="handleGoToCategories()"
+                onclick="goToCategories()"
         >
             ⬆
         </button>
@@ -97,7 +97,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -108,7 +108,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -136,7 +136,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -147,7 +147,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -175,7 +175,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -186,7 +186,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -214,7 +214,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -225,7 +225,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -253,7 +253,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -264,7 +264,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -292,7 +292,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -303,7 +303,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -319,7 +319,7 @@
 
         <button
                 class="back-to-categories-button d-flex justify-content-center align-items-center p-2"
-                onclick="handleGoToCategories()"
+                onclick="goToCategories()"
         >
             ⬆
         </button>
@@ -348,7 +348,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -359,7 +359,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -387,7 +387,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -398,7 +398,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -426,7 +426,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -437,7 +437,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -465,7 +465,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -476,7 +476,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -504,7 +504,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -515,7 +515,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -543,7 +543,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -554,7 +554,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -570,7 +570,7 @@
 
         <button
                 class="back-to-categories-button d-flex justify-content-center align-items-center p-2"
-                onclick="handleGoToCategories()"
+                onclick="goToCategories()"
         >
             ⬆
         </button>
@@ -599,7 +599,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -610,7 +610,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -638,7 +638,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -649,7 +649,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -677,7 +677,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -688,7 +688,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -716,7 +716,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -727,7 +727,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -755,7 +755,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -766,7 +766,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -794,7 +794,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -805,7 +805,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -821,7 +821,7 @@
 
         <button
                 class="back-to-categories-button d-flex justify-content-center align-items-center p-2"
-                onclick="handleGoToCategories()"
+                onclick="goToCategories()"
         >
             ⬆
         </button>
@@ -850,7 +850,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -861,7 +861,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -889,7 +889,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -900,7 +900,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -928,7 +928,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -939,7 +939,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -967,7 +967,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -978,7 +978,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1006,7 +1006,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1017,7 +1017,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1045,7 +1045,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1056,7 +1056,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1072,7 +1072,7 @@
 
         <button
                 class="back-to-categories-button d-flex justify-content-center align-items-center p-2"
-                onclick="handleGoToCategories()"
+                onclick="goToCategories()"
         >
             ⬆
         </button>
@@ -1101,7 +1101,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1112,7 +1112,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1140,7 +1140,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1151,7 +1151,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1179,7 +1179,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1190,7 +1190,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1218,7 +1218,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1229,7 +1229,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1257,7 +1257,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1268,7 +1268,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1296,7 +1296,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1307,7 +1307,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1323,7 +1323,7 @@
 
         <button
                 class="back-to-categories-button d-flex justify-content-center align-items-center p-2"
-                onclick="handleGoToCategories()"
+                onclick="goToCategories()"
         >
             ⬆
         </button>
@@ -1352,7 +1352,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1363,7 +1363,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1391,7 +1391,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1402,7 +1402,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1430,7 +1430,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1441,7 +1441,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1469,7 +1469,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1480,7 +1480,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1508,7 +1508,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1519,7 +1519,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1547,7 +1547,7 @@
 
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
-                    onclick="hideQuestionCover(this)"
+                    onclick="toggleQuestionCover(this)"
             >
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
                     <span>🎁</span>
@@ -1558,7 +1558,7 @@
 
             <div
                     class="answer-cover d-flex align-items-center justify-content-center rounded text-bg-warning"
-                    onclick="hideAnswerCover(this)"
+                    onclick="toggleAnswerCover(this)"
             >
                 ?
             </div>
@@ -1566,18 +1566,19 @@
     </div>
 </div>
 <script>
-        const categoriesSection = document.querySelector('#categories');
-    function handleGoToCategories() {
+    const categoriesSection = document.querySelector('#categories');
+
+    function goToCategories() {
         categoriesSection.scrollIntoView({ behavior: 'smooth' });
     }
 
-    function handleCategoryBtnClick(sectionIndex) {
+    function goToCategoryByIndex(sectionIndex) {
         const targetCategorySection = document.querySelector(`#category-${sectionIndex}`);
 
         targetCategorySection.scrollIntoView({ behavior: 'smooth' })
     }
 
-    function hideQuestionCover(coverElement) {
+    function toggleQuestionCover(coverElement) {
         if (coverElement.classList.contains('question-cover')) {
             coverElement.classList.remove('question-cover');
             coverElement.classList.add('question-cover__hidden');
@@ -1587,7 +1588,7 @@
         }
     }
 
-    function hideAnswerCover(coverElement) {
+    function toggleAnswerCover(coverElement) {
         if (coverElement.classList.contains('answer-cover')) {
             coverElement.classList.remove('answer-cover');
             coverElement.classList.add('answer-cover__hidden');
