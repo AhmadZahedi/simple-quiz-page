@@ -21,12 +21,16 @@
 
 <div id="categories-section"></div>
 
+<!-- categoryElement-->
 <a href="#category-1" id="category-1" class="h-100 d-flex flex-column justify-content-between">
+<!--  categoryTitleElement  -->
     <div class="d-flex justify-content-between align-items-center">
+<!--    categoryTitleText    -->
         <div class="category__title">
             category one
         </div>
 
+<!--    categoryTitleButton    -->
         <button
                 class="back-to-categories-button d-flex justify-content-center align-items-center p-2"
                 onclick="goToCategories()"
@@ -35,15 +39,24 @@
         </button>
     </div>
 
+<!--  categoryQuestionsElement  -->
     <div class="row row-cols-3 flex-grow-1">
+
+<!--    questionGroup    -->
         <div class="question__container d-flex flex-column my-2">
+
+<!--     questionContainer       -->
             <div class="flex-90 pb-4">
+
+<!--       questionBody         -->
                 <div class="question__body">
                     What was the organization founded in 1917 that played a key role in the development of occupational
                     therapy in the United States?
                 </div>
 
+<!--       questionOptions         -->
                 <ul class="question__options fs-3">
+<!--        questionOption            -->
                     <li class="mt-4">Sigmund Freud</li>
                     <li class="mt-4">Dr. William Rush Dunton Jr.</li>
                     <li class="mt-4">John Dewey</li>
@@ -51,16 +64,23 @@
                 </ul>
             </div>
 
+<!--     questionAnswer       -->
             <div class="flex-10 d-flex justify-content-center align-items-center fs-1 text-bg-success rounded user-select-none">
                 Option A
             </div>
 
+<!--      questionCover      -->
             <div
                     class="question-cover d-flex align-items-center justify-content-center rounded"
                     onclick="toggleQuestionCover(this)"
             >
+<!--       questionCoverScore         -->
                 <div class="question-score fs-3 text-bg-danger px-5 rounded d-flex gap-3">
+
+<!--        questionCoverScoreIcon            -->
                     <span>🎁</span>
+
+<!--        questionCoverScoreValue            -->
                     <span>100</span>
                 </div>
                 1
@@ -261,6 +281,7 @@
     </div>
 </a>
 
+<!-- categoryDivider -->
 <div class="category--divider"></div>
 
 <a href="#category-2" id="category-2" class="h-100 d-flex flex-column justify-content-between">
