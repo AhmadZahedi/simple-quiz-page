@@ -1,18 +1,19 @@
 const quizData = [
     {
         id: 1,
-        text: 'Occupational Therapy Fundamentals',
+        categoryName: 'occupational therapy fundamentals',
         sectionTitle: 'category one',
         questions: [
             {
                 id: 1,
                 score: 100,
-                body: 'What was the organization founded in 1917 that played a key role in the development of occupational therapy in the United States?',
+                imageName: 'cerebral-cortex-1.png',
+                body: null,
                 options: [
-                    'A',
-                    'B',
-                    'C',
-                    'D'
+                    'first option',
+                    'second option',
+                    'third option',
+                    'forth option'
                 ],
                 answer: 'option A'
             },
@@ -21,10 +22,10 @@ const quizData = [
                 score: 300,
                 body: 'What was the organization founded in 1917 that played a key role in the development of occupational therapy in the United States?',
                 options: [
-                    'A',
-                    'B',
-                    'C',
-                    'D'
+                    'first option',
+                    'second option',
+                    'third option',
+                    'forth option'
                 ],
                 answer: 'option A'
             },
@@ -80,7 +81,7 @@ const quizData = [
     },
     {
         id: 2,
-        text: 'Anatomy and Physiology',
+        categoryName: 'anatomy and physiology',
         sectionTitle: 'category two',
         questions: [
             {
@@ -157,10 +158,9 @@ const quizData = [
             }
         ]
     },
-
     {
         id: 3,
-        text: 'Assessment and Evaluation',
+        categoryName: 'assessment and evaluation',
         sectionTitle: 'category three',
         questions: [
             {
@@ -239,7 +239,7 @@ const quizData = [
     },
     {
         id: 4,
-        text: 'Treatment Interventions',
+        categoryName: 'treatment interventions',
         sectionTitle: 'category four',
         questions: [
             {
@@ -318,7 +318,7 @@ const quizData = [
     },
     {
         id: 5,
-        text: 'Pediatric Occupational Therapy',
+        categoryName: 'pediatric occupational therapy',
         sectionTitle: 'category five',
         questions: [
             {
@@ -397,7 +397,7 @@ const quizData = [
     },
     {
         id: 6,
-        text: 'Occupational Therapy Ethics and Professionalism',
+        categoryName: 'occupational therapy ethics and professionalism',
         sectionTitle: 'category six',
         questions: [
             {
@@ -488,7 +488,7 @@ function createTagWithClassList(classArray, tagName = 'div') {
 function createDom() {
     quizData.forEach((item) => {
         const btnElement = createTagWithClassList(['category-button', 'p-4'], 'button');
-        btnElement.innerText = item.text;
+        btnElement.innerText = item.categoryName;
         btnElement.addEventListener('click', () => goToCategoryById(item.id));
         categoriesButtonsSection.appendChild(btnElement);
 
@@ -543,8 +543,23 @@ function createDom() {
 
             categoryQuestionsElement.appendChild(questionGroup);
 
-            const questionBody = createTagWithClassList(['question__body']);
-            questionBody.innerText = question.body;
+            let bodyClassList = [];
+            let bodyTagName = 'div';
+            if (question.body) {
+                bodyClassList = ['question__body'];
+            } else if (question.imageName) {
+                bodyClassList = ['question__body--image'];
+                bodyTagName = 'img';
+            } else {
+                bodyClassList = ['not-found'];
+            }
+
+            const questionBody = createTagWithClassList(bodyClassList, bodyTagName);
+            if (bodyTagName === 'div') questionBody.innerText = question.body;
+            else if (bodyTagName === 'img') {
+                questionBody.src = `./assets/images/${question.imageName}`;
+                questionBody.alt = 'question image';
+            }
 
             const questionOptions = createTagWithClassList(['question__options', 'fs-3'], 'ul');
 
