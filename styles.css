@@ -52,6 +52,7 @@ a {
     transition: 0.5s all;
     width: 30%;
     height: 20%;
+    text-transform: capitalize;
 }
 
 .category-button:hover {
@@ -99,6 +100,10 @@ a {
 .question__body {
     font-size: 2rem;
     color: darkseagreen;
+}
+
+.question__body--image {
+    width: 100%;
 }
 
 .question__options {
