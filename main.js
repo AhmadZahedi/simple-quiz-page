@@ -572,10 +572,6 @@ function createDom() {
 
         categoryElement.parentElement.appendChild(categoryDivider);
     });
-
-    const endSection = createTagWithClassList(['finish-section', 'd-flex', 'justify-content-center', 'align-items-center', 'text-center']);
-    endSection.id = 'end-section';
-    endSection.innerText = 'thanks for your participation';
 }
 
 createDom();
