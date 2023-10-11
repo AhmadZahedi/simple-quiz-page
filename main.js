@@ -489,30 +489,26 @@ function createDom() {
     quizData.forEach((item) => {
         const btnElement = createTagWithClassList(['category-button', 'p-4'], 'button');
         btnElement.innerText = item.text;
-        btnElement.addEventListener('click', () => goToCategoryByid(item.id));
+        btnElement.addEventListener('click', () => goToCategoryById(item.id));
         categoriesButtonsSection.appendChild(btnElement);
 
-        const categoryElement = createTagWithClassList(['h-100', 'd-flex', 'flex-column', 'justify-content-between'], 'a');
-        categoryElement.href = `#category-${item.id}`;
+        const categoryElement = createTagWithClassList(['vh-100', 'd-flex', 'flex-column', 'justify-content-between'], 'div');
         categoryElement.id = `category-${item.id}`;
 
         const categoryTitleElement = createTagWithClassList(['d-flex', 'justify-content-between', 'align-items-center']);
 
-        const categoryTitleText = createTagWithClassList(['category__title']);
+        const categoryTitleText = createTagWithClassList(['category__title'], 'a');
         categoryTitleText.innerText = `${item.sectionTitle}`;
+        categoryTitleText.href = `#category-${item.id}`;
 
         const categoryTitleButton = createTagWithClassList(['back-to-categories-button', 'd-flex', 'justify-content-center', 'align-items-center', 'p-2'], 'button');
         categoryTitleButton.addEventListener('click', goToCategories);
         categoryTitleButton.innerText = '⬆';
 
-        const categoryDivider = createTagWithClassList(['category--divider']);
-
         const categoryQuestionsElement = createTagWithClassList(['row', 'row-cols-3', 'flex-grow-1']);
 
         item.questions.forEach((question) => {
             const questionGroup = createTagWithClassList(['question__container', 'd-flex', 'flex-column', 'my-2']);
-
-            categoryQuestionsElement.appendChild(questionGroup);
 
             const questionContainer = createTagWithClassList(['flex-90', 'pb-4']);
 
@@ -520,7 +516,7 @@ function createDom() {
             questionAnswer.innerText = question.answer;
 
             const questionCover = createTagWithClassList(['question-cover', 'd-flex', 'align-items-center', 'justify-content-center', 'rounded']);
-            questionCover.addEventListener('click', () => toggleQuestionCover(this));
+            questionCover.addEventListener('click', () => toggleQuestionCover(questionCover));
             questionCover.innerText = question.id;
 
             const questionCoverScore = createTagWithClassList(['question-score', 'fs-3', 'text-bg-danger', 'px-5', 'rounded', 'd-flex', 'gap-3']);
@@ -536,9 +532,16 @@ function createDom() {
 
             questionCover.appendChild(questionCoverScore);
 
+            const answerCover = createTagWithClassList(['answer-cover', 'd-flex', 'align-items-center', 'justify-content-center', 'rounded', 'text-bg-warning']);
+            answerCover.addEventListener('click', () => toggleAnswerCover(answerCover));
+            answerCover.innerText = '?';
+
             questionGroup.appendChild(questionContainer);
             questionGroup.appendChild(questionAnswer);
             questionGroup.appendChild(questionCover);
+            questionGroup.appendChild(answerCover);
+
+            categoryQuestionsElement.appendChild(questionGroup);
 
             const questionBody = createTagWithClassList(['question__body']);
             questionBody.innerText = question.body;
@@ -562,26 +565,34 @@ function createDom() {
 
         categoryElement.appendChild(categoryTitleElement);
         categoryElement.appendChild(categoryQuestionsElement);
-        categoryElement.appendChild(categoryDivider);
+
+        const categoryDivider = createTagWithClassList(['category--divider']);
 
         categoriesSection.appendChild(categoryElement);
+
+        categoryElement.parentElement.appendChild(categoryDivider);
     });
+
+    const endSection = createTagWithClassList(['finish-section', 'd-flex', 'justify-content-center', 'align-items-center', 'text-center']);
+    endSection.id = 'end-section';
+    endSection.innerText = 'thanks for your participation';
 }
 
 createDom();
 
-function goToCategories() {
+function goToCategories(event) {
     categoriesButtonsSection.scrollIntoView({ behavior: 'smooth' });
+
+    event.stopPropagation();
 }
 
-function goToCategoryByid(sectionid) {
-    const targetCategorySection = document.querySelector(`#category-${sectionid}`);
+function goToCategoryById(sectionId) {
+    const targetCategorySection = document.querySelector(`#category-${sectionId}`);
 
     targetCategorySection.scrollIntoView({ behavior: 'smooth' });
 }
 
 function toggleQuestionCover(coverElement) {
-    console.log(coverElement)
     if (coverElement.classList.contains('question-cover')) {
         coverElement.classList.remove('question-cover');
         coverElement.classList.add('question-cover__hidden');
