@@ -247,12 +247,15 @@ a {
     background: #000;
 }
 
-.modal {
+.custom-modal {
     position: fixed;
     top: 50%;
     left: 50%;
     width: 50%;
-    height: fit-content;
+    height: 500px;
     z-index: 110;
     background: #fff;
+    transform: translate(-50%, -50%);
+    display: block;
+    opacity: 1;
 }

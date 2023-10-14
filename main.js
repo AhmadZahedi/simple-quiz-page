@@ -479,7 +479,7 @@ function createDom() {
                 answerCover.addEventListener('click', () => {
                     const modalBg = createTagWithClassList(['modal-background']);
                     document.body.appendChild(modalBg);
-                    const modal = createTagWithClassList(['modal']);
+                    const modal = createTagWithClassList(['custom-modal']);
                     modalBg.appendChild(modal);
                     modalBg.addEventListener('click', () => {
                         document.body.removeChild(modalBg);
