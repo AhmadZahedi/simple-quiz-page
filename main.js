@@ -516,8 +516,10 @@ function createDom() {
                     const modalContent = questionBody.cloneNode(true);
                     modal.appendChild(modalContent);
                     modalBg.appendChild(modal);
-                    modalBg.addEventListener('click', () => {
-                        document.body.removeChild(modalBg);
+                    modalBg.addEventListener('click', (e) => {
+                        if (e.target === modalBg) {
+                            document.body.removeChild(modalBg);
+                        }
                     });
 
                 })
