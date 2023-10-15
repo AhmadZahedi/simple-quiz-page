@@ -181,7 +181,7 @@ const quizData = [
                 imageName: '4.png',
                 body: null,
                 options: [],
-                answer: 'option A'
+                answer: undefined
             },
             {
                 id: 5,
@@ -189,7 +189,7 @@ const quizData = [
                 imageName: '5.png',
                 body: null,
                 options: [],
-                answer: null
+                answer: undefined
             },
             {
                 id: 6,
@@ -197,7 +197,7 @@ const quizData = [
                 imageName: '6.png',
                 body: null,
                 options: [],
-                answer: null
+                answer: undefined
             }
         ]
     },
@@ -210,6 +210,7 @@ const quizData = [
                 id: 1,
                 score: 100,
                 body: 'IADL',
+                centerBody: true,
                 options: [],
                 answer: 'Care of Pets'
             },
@@ -217,6 +218,7 @@ const quizData = [
                 id: 2,
                 score: 200,
                 body: 'Spint',
+                centerBody: true,
                 options: [],
                 answer: 'Radial Cock-up Splint'
             },
@@ -224,6 +226,7 @@ const quizData = [
                 id: 3,
                 score: 300,
                 body: 'Assistive Devices',
+                centerBody: true,
                 options: [],
                 answer: 'Mobile Arm Support '
             },
@@ -231,6 +234,7 @@ const quizData = [
                 id: 4,
                 score: 400,
                 body: 'Diagnosis',
+                centerBody: true,
                 options: [],
                 answer: 'Gullian Barre Syndrome (GBS)'
             },
@@ -238,6 +242,7 @@ const quizData = [
                 id: 5,
                 score: 500,
                 body: 'Assesment',
+                centerBody: true,
                 options: [],
                 answer: 'Fugl Meyer Assesment'
             },
@@ -245,6 +250,7 @@ const quizData = [
                 id: 6,
                 score: 600,
                 body: 'Robotic Equipment',
+                centerBody: true,
                 options: [],
                 answer: 'Arotromot'
             }
@@ -328,7 +334,7 @@ const quizData = [
                     'Caregiver training',
                     'A remedial approach that focuses on improving memory and concentration skills'
                 ],
-                answer: '1,2&4'
+                answer: 'options A, B & D'
             }
         ]
     },
@@ -341,73 +347,43 @@ const quizData = [
                 id: 1,
                 score: 100,
                 body: 'Who is the tallest OT in QRI?',
-                options: [
-                    'A',
-                    'B',
-                    'C',
-                    'D'
-                ],
-                answer: 'option A'
+                options: [],
+                answer: undefined
             },
             {
                 id: 2,
                 score: 200,
                 body: 'Who has the best smile?',
-                options: [
-                    'A',
-                    'B',
-                    'C',
-                    'D'
-                ],
-                answer: 'option A'
+                options: [],
+                answer: undefined
             },
             {
                 id: 3,
                 score: 300,
                 body: 'How many filipino OT do we have in QRI?',
-                options: [
-                    'A',
-                    'B',
-                    'C',
-                    'D'
-                ],
-                answer: 'option A'
+                options: [],
+                answer: undefined
             },
             {
                 id: 4,
                 score: 400,
                 body: 'How many department staffs are experts in laying Guitar?',
-                options: [
-                    'A',
-                    'B',
-                    'C',
-                    'D'
-                ],
-                answer: 'option A'
+                options: [],
+                answer: undefined
             },
             {
                 id: 5,
                 score: 500,
                 body: 'How many OTs wear eye glasses?',
-                options: [
-                    'A',
-                    'B',
-                    'C',
-                    'D'
-                ],
-                answer: 'option A'
+                options: [],
+                answer: undefined
             },
             {
                 id: 6,
                 score: 600,
                 body: 'Which employee in OT department has the most kids?...',
-                options: [
-                    'A',
-                    'B',
-                    'C',
-                    'D'
-                ],
-                answer: 'option A'
+                options: [],
+                answer: undefined
             }
         ]
     }
@@ -449,7 +425,7 @@ function createDom() {
 
             const questionContainer = createTagWithClassList(['flex-90', 'pb-4']);
 
-            let bodyClassList = [];
+            let bodyClassList;
             let bodyTagName = 'div';
             if (question.body) {
                 bodyClassList = ['question__body',
@@ -521,14 +497,13 @@ function createDom() {
                             document.body.removeChild(modalBg);
                         }
                     });
-
-                })
+                });
             }
 
             questionGroup.appendChild(questionContainer);
-            questionGroup.appendChild(answerContainer);
+            if (question.answer) questionGroup.appendChild(answerContainer);
             questionGroup.appendChild(questionCover);
-            questionGroup.appendChild(answerCover);
+            if (question.answer || question.imageName) questionGroup.appendChild(answerCover);
 
             categoryQuestionsElement.appendChild(questionGroup);
         });
@@ -568,8 +543,10 @@ function toggleQuestionCover(coverElement) {
     } else {
         coverElement.classList.remove('question-cover__hidden');
         coverElement.classList.add('question-cover');
-        coverElement.parentElement.lastElementChild.classList.add('answer-cover');
-        coverElement.parentElement.lastElementChild.classList.remove('answer-cover__hidden');
+        if (coverElement.parentElement.lastElementChild.classList.contains('answer-cover__hidden')) {
+            coverElement.parentElement.lastElementChild.classList.add('answer-cover');
+            coverElement.parentElement.lastElementChild.classList.remove('answer-cover__hidden');
+        }
     }
 }
 
