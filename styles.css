@@ -103,13 +103,20 @@ a {
 
 .question__body {
     font-size: 2rem;
-    color: darkseagreen;
+    color: #81e2ff;
 }
 
 .question__body--centered {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    font-weight: bold;
+    color: darkturquoise;
 }
 
 .question__body--image {
