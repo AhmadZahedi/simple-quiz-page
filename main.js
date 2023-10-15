@@ -445,12 +445,45 @@ function createDom() {
         const categoryQuestionsElement = createTagWithClassList(['row', 'row-cols-3', 'flex-grow-1']);
 
         item.questions.forEach((question) => {
-            const questionGroup = createTagWithClassList(['question__container', 'd-flex', 'flex-column', 'my-2']);
+            const questionGroup = createTagWithClassList(['question__group', 'd-flex', 'flex-column', 'my-2']);
 
             const questionContainer = createTagWithClassList(['flex-90', 'pb-4']);
 
-            const questionAnswer = createTagWithClassList(['flex-10', 'd-flex', 'justify-content-center', 'align-items-center', 'fs-1', 'text-bg-success', 'rounded', 'user-select-none']);
-            questionAnswer.innerText = question.answer;
+            let bodyClassList = [];
+            let bodyTagName = 'div';
+            if (question.body) {
+                bodyClassList = ['question__body',
+                    ...question.centerBody ? ['question__body--centered'] : []
+                ];
+            } else if (question.imageName) {
+                bodyClassList = ['question__body--image'];
+                bodyTagName = 'img';
+            } else {
+                bodyClassList = ['not-found'];
+            }
+
+            const questionBody = createTagWithClassList(bodyClassList, bodyTagName);
+            if (bodyTagName === 'div') questionBody.innerText = question.body;
+            else if (bodyTagName === 'img') {
+                questionBody.src = `./assets/images/${question.imageName}`;
+                questionBody.alt = 'question image';
+            }
+
+            const questionOptions = createTagWithClassList(['question__options', 'fs-3'], 'ul');
+
+            question.options.forEach((option) => {
+                const questionOption = document.createElement('li');
+                questionOption.classList.add('mt-4');
+                questionOption.innerText = option;
+
+                questionOptions.appendChild(questionOption);
+            });
+
+            questionContainer.appendChild(questionBody);
+            questionContainer.appendChild(questionOptions);
+
+            const answerContainer = createTagWithClassList(['flex-10', 'd-flex', 'justify-content-center', 'align-items-center', 'fs-1', 'text-bg-success', 'rounded', 'user-select-none']);
+            answerContainer.innerText = question.answer;
 
             const questionCover = createTagWithClassList(['question-cover', 'd-flex', 'align-items-center', 'justify-content-center', 'rounded']);
             questionCover.addEventListener('click', () => toggleQuestionCover(questionCover));
@@ -480,6 +513,8 @@ function createDom() {
                     const modalBg = createTagWithClassList(['modal-background']);
                     document.body.appendChild(modalBg);
                     const modal = createTagWithClassList(['custom-modal']);
+                    const modalContent = questionBody.cloneNode(true);
+                    modal.appendChild(modalContent);
                     modalBg.appendChild(modal);
                     modalBg.addEventListener('click', () => {
                         document.body.removeChild(modalBg);
@@ -489,44 +524,11 @@ function createDom() {
             }
 
             questionGroup.appendChild(questionContainer);
-            questionGroup.appendChild(questionAnswer);
+            questionGroup.appendChild(answerContainer);
             questionGroup.appendChild(questionCover);
             questionGroup.appendChild(answerCover);
 
             categoryQuestionsElement.appendChild(questionGroup);
-
-            let bodyClassList = [];
-            let bodyTagName = 'div';
-            if (question.body) {
-                bodyClassList = ['question__body',
-                    ...question.centerBody ? ['question__body--centered'] : []
-                ];
-            } else if (question.imageName) {
-                bodyClassList = ['question__body--image'];
-                bodyTagName = 'img';
-            } else {
-                bodyClassList = ['not-found'];
-            }
-
-            const questionBody = createTagWithClassList(bodyClassList, bodyTagName);
-            if (bodyTagName === 'div') questionBody.innerText = question.body;
-            else if (bodyTagName === 'img') {
-                questionBody.src = `./assets/images/${question.imageName}`;
-                questionBody.alt = 'question image';
-            }
-
-            const questionOptions = createTagWithClassList(['question__options', 'fs-3'], 'ul');
-
-            questionContainer.appendChild(questionBody);
-            questionContainer.appendChild(questionOptions);
-
-            question.options.forEach((option) => {
-                const questionOption = document.createElement('li');
-                questionOption.classList.add('mt-4');
-                questionOption.innerText = option;
-
-                questionOptions.appendChild(questionOption);
-            });
         });
 
         categoryTitleElement.appendChild(categoryTitleText);
