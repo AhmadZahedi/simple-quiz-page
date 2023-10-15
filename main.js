@@ -312,13 +312,13 @@ const quizData = [
             {
                 id: 5,
                 score: 500,
-                body: 'Which RLA this belongs to:' +
+                body: 'Which RLA this belongs to:' + '\n' +
                     '-Oriented in familiar settings' +
-                    '-Able to perform a daily routine automatically with absent to minimal confusion' +
-                    '-Demonstrate carry over for new tasks and learning in addition to familiar tasks' +
-                    '-Can be superficially aware of diagnosis but unaware of specific impairments' +
-                    '-Continue to demonstrate a lack of insight, decreased judgment and safety awareness' +
-                    '-Beginning to show interest in social and recreational activities in structured settings' +
+                    '-Able to perform a daily routine automatically with absent to minimal confusion' + '\n' +
+                    '-Demonstrate carry over for new tasks and learning in addition to familiar tasks' + '\n' +
+                    '-Can be superficially aware of diagnosis but unaware of specific impairments' + '\n' +
+                    '-Continue to demonstrate a lack of insight, decreased judgment and safety awareness' + '\n' +
+                    '-Beginning to show interest in social and recreational activities in structured settings' + '\n' +
                     '-Require at least minimal supervision for learning and safety purposes',
                 options: [],
                 answer: 'RLA 7'
