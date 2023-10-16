@@ -9,8 +9,8 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="container">
-<div id="start-section" class="h-100 d-flex flex-column justify-content-center align-items-center">
+<body>
+<div id="start-section" class="h-100 d-flex flex-column justify-content-start pt-5 align-items-center">
     <h1 class="title text-center mb-5">Occupational Therapy Quiz</h1>
 
     <button onclick="goToCategories()" class="start-button p-4 w-25">
@@ -18,28 +18,28 @@
     </button>
 </div>
 
-<div id="categories-button-section" class="d-flex flex-wrap h-100 align-items-center justify-content-between"></div>
+<div id="categories-button-section" class="container d-flex flex-wrap h-100 align-items-center justify-content-between"></div>
 
-<div id="categories-section"></div>
+<div id="categories-section" class="container"></div>
 
 <!-- endSection -->
 <div
         id="end-section"
-        class="finish-section d-flex justify-content-center align-items-center text-center"
+        class="finish-section d-flex justify-content-center align-items-start pt-5 text-center"
 >
     thanks for your participation
 </div>
 
 <!-- action buttons -->
 <button
-        class="static-actions--btn static-actions--btn__start"
+        class="static-actions--btn static-actions--btn__start border-0"
         onclick="goToStartSection()"
 >
     begin
 </button>
 
 <button
-        class="static-actions--btn static-actions--btn__finish"
+        class="static-actions--btn static-actions--btn__finish border-0"
         onclick="goToFinishSection()"
 >
     end
