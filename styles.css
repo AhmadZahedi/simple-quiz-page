@@ -23,7 +23,7 @@ a {
 
 .title {
     font-size: 5rem;
-    color: aliceblue;
+    color: #1a2a4b;
 }
 
 .start-button {
@@ -211,7 +211,7 @@ a {
     text-transform: capitalize;
     font-size: 10rem;
     font-weight: bold;
-    color: #f6adbf;
+    color: #f38082;
     user-select: none;
 }
 

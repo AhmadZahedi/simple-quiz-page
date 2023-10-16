@@ -524,6 +524,18 @@ function createDom() {
 
 createDom();
 
+const startSection = document.querySelector('#start-section');
+const endSection = document.querySelector('#end-section');
+
+function addBackgroundImage(sectionEl, imageFileName) {
+    sectionEl.style.backgroundImage = `url('assets/${imageFileName}')`;
+    sectionEl.style.backgroundSize = 'cover';
+    sectionEl.style.backgroundPosition = 'center';
+}
+
+addBackgroundImage(startSection, 'first-page-background.png');
+addBackgroundImage(endSection, 'last-page-background.png');
+
 function goToCategories(event) {
     categoriesButtonsSection.scrollIntoView({ behavior: 'smooth' });
 
